@@ -31,7 +31,7 @@ namespace _8tsk2
                 for (int i = 0; i < n; i++)
                 {
                     ar[i] = ran.Next(-50, 50);
-                    string aer = Convert.ToString(ar[i]);
+                    //string aer = Convert.ToString(ar[i]);
                     sw.WriteLine(ar[i]);                    
                 }
             }

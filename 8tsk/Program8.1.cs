@@ -15,11 +15,15 @@ namespace _8tsk
              * Выведите на консоль ее содержимое и содержимое всех подкаталогов.
              * 
              */
+            //Вводим адрес папки
             Console.WriteLine("Введите адрес папки");
             string path = Console.ReadLine();
-            DirectoryInfo dir = new DirectoryInfo(path);
+            //Создаем переменную
+            DirectoryInfo dir = new DirectoryInfo(path);            
+            //проверка на сущестование
             if (dir.Exists)
             {            
+                //Считываем названия каталогов и подкаталогов и файлы в них
                Console.WriteLine("Список каталогов");
                 foreach (var cats in dir.GetDirectories())
                 {                
@@ -35,7 +39,8 @@ namespace _8tsk
                         }
                     }
                 }            
-                Console.WriteLine("список файлов");            
+                //Считываем названия файлов в исхождном каталоге
+                Console.WriteLine("Список файлов");            
                foreach (var fl in dir.GetFiles())
                 {                
                     Console.WriteLine(fl.Name);
@@ -43,5 +48,17 @@ namespace _8tsk
             }
             Console.ReadKey();
         } 
+        /*static void gtdr(DirectoryInfo dir)
+        {
+            foreach (var cats in dir.GetDirectories().OrderBy(cats=>cats.Name))
+            {
+                Console.WriteLine("Каталог");
+                Console.WriteLine(cats);
+                if (cats.GetDirectories().Count()>0)
+                {
+                    gtdr(cats);
+                }
+            }
+        }  */ 
     }
 }
